@@ -1,0 +1,3 @@
+&led0 {
+    gpios = <&gpio2 7 GPIO_ACTIVE_HIGH>;
+};

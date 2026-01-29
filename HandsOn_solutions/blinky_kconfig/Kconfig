@@ -1,0 +1,8 @@
+menu "Blinky at Workshop"
+config BLINKY_TIME_ON
+  int "The time the LED is on (mS)."
+  default 1000
+endmenu
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
