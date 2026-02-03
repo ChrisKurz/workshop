@@ -1,5 +1,7 @@
 # nPM2100 Sample: Adding nPM2100 Fuel Gauge
 
+  > __NOTE:__  Output voltage of nPM2100EK is 3.0V. So, please change VDD on nRF54L15DK to 3000mV. => _nRF Connect for Desktop_ => _Board Configurator_
+
 1) Create DTS overlay file (if not existing already): nrf54l15dk_nrf54l15_cpuapp.overlay
 
 2) Add to nrf54l15dk_nrf54l15_cpuapp.overlay: selected pins for the I2C peripheral use:
@@ -160,4 +162,3 @@
                fuel_gauge_update(vbat);
                k_msleep(1000);
            }
-  
