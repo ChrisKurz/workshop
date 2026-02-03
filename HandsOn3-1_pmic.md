@@ -39,7 +39,7 @@
                    compatible = "nordic,npm2100-vbat";
                };
            };
-      };
+       };
 
 4) Add to prj.conf: SW configuration, enable libraries for fuel gauge
 
