@@ -1,4 +1,4 @@
-# Rutronik/Nordic Semiconductor Workshop: _Wireless IoT Entwicklung mit Nordic Semiconductor_
+# Rutronik/Nordic Semiconductor Workshop: <br> _Wireless IoT Entwicklung mit Nordic Semiconductor_
 ## Workshop Dates/Locations
 
 > 26. February 2026, Donaueschingen <br>
