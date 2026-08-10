@@ -1,0 +1,24 @@
+{
+  "nrfutil_device_version": "2.19.0",
+  "family": "NRF54L_FAMILY",
+  "operations": [
+    {
+      "core": "NRFDL_DEVICE_CORE_APPLICATION",
+      "operation": {
+        "chip_erase_mode": "ERASE_NONE",
+        "firmware": {
+          "file": "C:\\Nordic\\ws_labs\\lab3_device_pm\\build\\lab3_device_pm\\zephyr\\zephyr.hex"
+        },
+        "type": "program",
+        "verify": "VERIFY_READ"
+      }
+    },
+    {
+      "core": "NRFDL_DEVICE_CORE_APPLICATION",
+      "operation": {
+        "option": "RESET_PIN",
+        "type": "reset"
+      }
+    }
+  ]
+}

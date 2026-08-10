@@ -1,0 +1,7 @@
+default: lab3_device_pm
+build_dir: C:/Nordic/ws_labs/lab3_device_pm/build
+domains:
+  - name: lab3_device_pm
+    build_dir: C:/Nordic/ws_labs/lab3_device_pm/build/lab3_device_pm
+flash_order:
+  - lab3_device_pm

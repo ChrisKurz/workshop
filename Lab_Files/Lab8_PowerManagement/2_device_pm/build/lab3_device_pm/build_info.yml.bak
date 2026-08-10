@@ -1,0 +1,57 @@
+cmake:
+  application:
+    configuration-dir: 'C:/Nordic/ws_labs/lab3_device_pm'
+    source-dir: 'C:/Nordic/ws_labs/lab3_device_pm'
+  board:
+    name: 'nrf54l15dk'
+    path:
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/boards/nordic/nrf54l15dk'
+    qualifiers: 'nrf54l15/cpuapp'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - 'C:/Nordic/NCS/v3.4.0/nrf/dts/bindings'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/bindings'
+    files:
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/boards/nordic/nrf54l15dk/nrf54l15dk_nrf54l15_cpuapp.dts'
+     - 'C:/Nordic/ws_labs/lab3_device_pm/boards/nrf54l15dk_nrf54l15_cpuapp.overlay'
+    include-dirs:
+     - 'C:/Nordic/NCS/v3.4.0/nrf/include'
+     - 'C:/Nordic/NCS/v3.4.0/nrf/dts/common'
+     - 'C:/Nordic/NCS/v3.4.0/nrf/dts/riscv'
+     - 'C:/Nordic/NCS/v3.4.0/nrf/dts/arm'
+     - 'C:/Nordic/NCS/v3.4.0/nrf/dts'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/include'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/include/zephyr'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/common'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/vendor'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/rx'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/x86'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/xtensa'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/sparc'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/riscv'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/posix'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/arm64'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/arm'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts/arc'
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/dts'
+    user-files:
+     - 'C:/Nordic/ws_labs/lab3_device_pm/boards/nrf54l15dk_nrf54l15_cpuapp.overlay'
+  kconfig:
+    files:
+     - 'C:/Nordic/NCS/v3.4.0/zephyr/boards/nordic/nrf54l15dk/nrf54l15dk_nrf54l15_cpuapp_defconfig'
+     - 'C:/Nordic/ws_labs/lab3_device_pm/prj.conf'
+     - 'C:/Nordic/ws_labs/lab3_device_pm/build/lab3_device_pm/zephyr/misc/generated/extra_kconfig_options.conf'
+     - 'C:/Nordic/ws_labs/lab3_device_pm/build/lab3_device_pm/zephyr/.config.sysbuild'
+    user-files:
+     - 'C:/Nordic/ws_labs/lab3_device_pm/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: 'C:/Nordic/NCS/toolchains/dcbdc366a1/opt/zephyr-sdk'
+  vendor-specific:
+    nordic:
+      svdfile: 'C:/Nordic/NCS/v3.4.0/modules/hal/nordic/nrfx/bsp/stable/mdk/nrf54l15_application.svd'
+  zephyr:
+    version: '4.4.0'
+    zephyr-base: 'C:/Nordic/NCS/v3.4.0/zephyr'
+version: '0.1.0'

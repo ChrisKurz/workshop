@@ -1,0 +1,47 @@
+/*
+ * Devicetree overlay for nrf54l15dk/nrf54l15/cpuapp
+ *
+ * Zephyr auto-applies this file because its name matches the board
+ * target (slashes become underscores: nrf54l15dk/nrf54l15/cpuapp ->
+ * nrf54l15dk_nrf54l15_cpuapp.overlay) and it lives in <app>/boards/.
+ *
+ * This overlay is a *patch* on top of:
+ *   zephyr/boards/nordic/nrf54l15dk/nrf54l15dk_nrf54l15_cpuapp.dts
+ *   zephyr/boards/nordic/nrf54l15dk/nrf54l15dk_nrf54l15_cpuapp_common.dtsi
+ *   zephyr/dts/arm/nordic/nrf54l15.dtsi (and friends)
+ *
+ * Exercise 2 (see hands-on guide):
+ *   1. Add a new alias so application code can reach LED1 without
+ *      knowing the underlying node label.
+ *   2. Add a brand-new node using the custom "workshop,fake-sensor"
+ *      binding (see dts/bindings/sensor/workshop,fake-sensor.yaml)
+ *      to practice writing/consuming your own bindings.
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		/* led1 is already defined by the board; we just give it
+		 * a second, application-specific name.
+		 */
+		my-led = &led1;
+	};
+
+	fake_sensor0: fake-sensor {
+		compatible = "workshop,fake-sensor";
+		status = "okay";
+		sensor-label = "Workshop-Demo-Sensor";
+		sampling-frequency-hz = <25>;
+
+		/* Reuses LED1's GPIO (P2.07) purely so this fictitious
+		 * node has a real, valid phandle to point at - no extra
+		 * wiring needed on the DK.
+		 */
+		io-gpios = <&gpio2 7 GPIO_ACTIVE_HIGH>;
+	};
+};
+
+&led0 {
+	gpios = <&gpio2 9 0>;
+};

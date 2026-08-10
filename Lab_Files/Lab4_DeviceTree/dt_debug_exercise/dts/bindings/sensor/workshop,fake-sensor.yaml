@@ -1,0 +1,26 @@
+description: |
+  Workshop demo node. Represents a fictitious sensor so that participants can
+  practice writing a Devicetree binding and reading custom properties with
+  the DT_ macro API. It does not correspond to real hardware; the "io-gpios"
+  property is wired to an LED already present on the nRF54L15 DK purely so
+  the demo has something observable to blink.
+
+compatible: "workshop,fake-sensor"
+
+include: base.yaml
+
+properties:
+  sensor-label:
+    type: string
+    required: true
+    description: Human readable name for this sensor instance.
+
+  sampling-frequency-hz:
+    type: int
+    default: 10
+    description: Sampling frequency in Hz.
+
+  io-gpios:
+    type: phandle-array
+    required: true
+    description: GPIO used as the sensor's "data ready" signal.

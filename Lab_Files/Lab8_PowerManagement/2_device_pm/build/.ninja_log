@@ -1,0 +1,27 @@
+# ninja log v7
+81	616	8076976429567901	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-mkdir	18f569424bacefc3
+81	616	8076976429567901	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-mkdir	18f569424bacefc3
+617	1130	8076976434717404	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-download	4bd74c0f44685a1f
+617	1130	8076976434717404	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-download	4bd74c0f44685a1f
+1132	1586	8076976439266541	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-update	b16658c7337a3a9d
+1132	1586	8076976439266541	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-update	b16658c7337a3a9d
+1586	2039	8076976443806049	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-patch	cf8bb94795d0db2d
+1586	2039	8076976443806049	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-patch	cf8bb94795d0db2d
+2039	2507	8076976448526935	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-configure	9a71a615d8765701
+2039	2507	8076976448526935	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-configure	9a71a615d8765701
+2507	29108	8076976448629430	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-build	5ae93fb3c9be011a
+2507	29108	8076976448629430	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-build	5ae93fb3c9be011a
+29108	29352	8076976714641258	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-install	b29e41d0dfd6ac47
+29108	29352	8076976714641258	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-install	b29e41d0dfd6ac47
+29352	29933	8076976722760938	_sysbuild/sysbuild/images/CMakeFiles/lab3_device_pm-complete	e441240626de23ea
+29352	29933	8076976722760938	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-done	e441240626de23ea
+29352	29933	8076976722760938	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/CMakeFiles/lab3_device_pm-complete	e441240626de23ea
+29352	29933	8076976722760938	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-done	e441240626de23ea
+80	962	8076976842136122	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-build	5ae93fb3c9be011a
+80	962	8076976842136122	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-build	5ae93fb3c9be011a
+962	1201	8076976850956758	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-install	b29e41d0dfd6ac47
+962	1201	8076976850956758	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-install	b29e41d0dfd6ac47
+1201	1883	8076976860051767	_sysbuild/sysbuild/images/CMakeFiles/lab3_device_pm-complete	e441240626de23ea
+1201	1883	8076976860051767	_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-done	e441240626de23ea
+1201	1883	8076976860051767	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/CMakeFiles/lab3_device_pm-complete	e441240626de23ea
+1201	1883	8076976860051767	C:/Nordic/ws_labs/lab3_device_pm/build/_sysbuild/sysbuild/images/lab3_device_pm-prefix/src/lab3_device_pm-stamp/lab3_device_pm-done	e441240626de23ea

@@ -1,0 +1,33 @@
+/*
+ * Non-secure devicetree overlay for nrf54l15dk/nrf54l15/cpuapp/ns
+ *
+ * Trusted Firmware-M's Secure image uses UART1 for its own secure-side
+ * boot/status log by default. If the Non-secure application also tries to
+ * use UART1 (directly, or because it happens to be the board's default
+ * console/shell UART), the two images conflict and the Non-secure app will
+ * not run correctly.
+ *
+ * This overlay implements "Option A" from the workshop: disable UART1 in
+ * the Non-secure image's devicetree so TF-M can own it exclusively. The
+ * board's normal application console is left on its own default UART and
+ * is unaffected.
+ *
+ * NOTE: verify the node label below (&uart1) against the nrf54l15dk
+ * devicetree shipped with your installed NCS v3.4.0
+ * (zephyr/boards/nordic/nrf54l15dk/nrf54l15dk_nrf54l15_cpuapp.dts and
+ * associated *_common.dtsi files) — label names occasionally change
+ * between SDK releases. Adjust the node reference here if it differs.
+ *
+ * Alternatives (see README.md, "Alternative options"):
+ *   Option B — leave UART1 available here, and instead set
+ *              CONFIG_TFM_LOG_LEVEL_SILENCE=y on the Secure (tfm_s) image
+ *              so TF-M stops using UART1 altogether.
+ *   Option C — keep this overlay, but instead of disabling UART1 outright,
+ *              re-point your own console/shell backend at a different UART
+ *              instance if your hardware setup needs UART1 for something
+ *              else.
+ */
+
+&uart1 {
+	status = "disabled";
+};

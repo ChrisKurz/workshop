@@ -1,0 +1,68 @@
+/*
+ * Lab 3 board overlay
+ *
+ * Adds:
+ *   1. A "zephyr,user" marker-gpios entry: a spare pin you can wire a PPK2
+ *      digital input to, toggled around pm_device_runtime_get()/put() calls
+ *      so the PM transition is directly visible on the current trace
+ *      (workshop Module 3, Step 3.6).
+ *
+ *      Default: gpio1 pin 9 (a header pin not used by the DK's LEDs/buttons
+ *      on most revisions). Change the controller/pin below if it conflicts
+ *      with your setup.
+ *
+ *   2. Enables a secondary UART instance and marks it for automatic Device
+ *      Runtime PM via the "zephyr,pm-device-runtime-auto" property, per
+ *      workshop Lab 3, Step 3.2.
+ *
+ *      Adjust "uart21" below to whichever secondary UARTE instance is free
+ *      on your exact nRF54L15 DK revision / NCS version - check your SoC's
+ *      .dtsi for the available uartNN node labels if the build fails to
+ *      find this node.
+ *
+ *   3. Pinctrl states for that UART instance. The nordic,nrf-uarte binding
+ *      REQUIRES pinctrl-0 (build fails with a devicetree error otherwise -
+ *      "'pinctrl-0' is marked as required... but does not appear in").
+ *      TX/RX below are mapped to P1.10 / P1.11, which are not used by any
+ *      LED, button, or on-board peripheral on the nRF54L15 DK - but always
+ *      double-check against your board revision's schematic/user guide
+ *      before wiring anything to these pins physically. If you only need
+ *      Device Runtime PM's suspend/resume behaviour (no actual bytes on the
+ *      wire), any free GPIO pair works; nothing needs to be physically
+ *      connected to them for this lab.
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>
+
+/ {
+	zephyr,user {
+		marker-gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
+	};
+};
+
+&pinctrl {
+	uart21_default: uart21_default {
+		group1 {
+			psels = <NRF_PSEL(UART_TX, 1, 10)>,
+				<NRF_PSEL(UART_RX, 1, 11)>;
+		};
+	};
+
+	uart21_sleep: uart21_sleep {
+		group1 {
+			psels = <NRF_PSEL(UART_TX, 1, 10)>,
+				<NRF_PSEL(UART_RX, 1, 11)>;
+			low-power-enable;
+		};
+	};
+};
+
+&uart21 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&uart21_default>;
+	pinctrl-1 = <&uart21_sleep>;
+	pinctrl-names = "default", "sleep";
+	zephyr,pm-device-runtime-auto;
+};

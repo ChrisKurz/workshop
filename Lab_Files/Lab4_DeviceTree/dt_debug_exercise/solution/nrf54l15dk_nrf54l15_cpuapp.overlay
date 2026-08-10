@@ -1,0 +1,43 @@
+/*
+ * SOLUTION - only look at this after attempting the exercise yourself.
+ *
+ * Three fixes relative to the broken overlay:
+ *   1. "workshop,fake-sesnor" -> "workshop,fake-sensor"
+ *      (typo'd compatible string: no binding matched, so the
+ *       phandle-array / type-aware macros for this node were never
+ *       generated - the symptom shows up as a *C compile error* in
+ *       main.c ("use of undeclared identifier"), not a DT-stage error.)
+ *   2. sampling-frequency-hz = "fast" -> sampling-frequency-hz = <5>
+ *      (property declared type INT in the binding, but a string was
+ *       supplied - this is a hard error from the devicetree tooling
+ *       itself, reported with the offending file/property.)
+ *   3. &led9 -> &gpio2 7
+ *      (led9 is not a defined label anywhere in the devicetree, so
+ *       this is an undefined-reference/undefined-label error. GPIO
+ *       phandles must point at a GPIO *controller* node such as
+ *       &gpio0/&gpio1/&gpio2, not at an led/gpio-keys child node.)
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		my-led = &led1;
+	};
+
+	weather0: weather-station {
+		compatible = "workshop,fake-sensor";
+		status = "okay";
+		sensor-label = "Workshop-Weather-Node";
+		sampling-frequency-hz = <5>;
+		io-gpios = <&gpio2 7 GPIO_ACTIVE_HIGH>;
+	};
+
+	backup0: backup-sensor {
+		compatible = "workshop,fake-sensor";
+		status = "okay";
+		sensor-label = "Backup-Node";
+		sampling-frequency-hz = <5>;
+		io-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+	};
+};

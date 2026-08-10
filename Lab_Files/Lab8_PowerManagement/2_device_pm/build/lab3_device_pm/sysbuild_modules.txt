@@ -1,0 +1,2 @@
+"nrf":"C:/Nordic/NCS/v3.4.0/nrf":"C:/Nordic/NCS/v3.4.0/nrf/sysbuild"
+"mcuboot":"C:/Nordic/NCS/v3.4.0/bootloader/mcuboot":"C:/Nordic/NCS/v3.4.0/bootloader/mcuboot/boot/zephyr/sysbuild"

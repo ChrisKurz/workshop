@@ -1,0 +1,42 @@
+/*
+ * Debugging Exercise - nrf54l15dk/nrf54l15/cpuapp
+ *
+ * This overlay does not build cleanly. It contains a small number of
+ * separate, realistic Devicetree mistakes. Work through them one at a
+ * time using the workflow from the "Debugging DeviceTree" module of the
+ * hands-on guide:
+ *
+ *   1. Run `west build -p always -b nrf54l15dk/nrf54l15/cpuapp dt_debug_exercise`
+ *   2. Read the FIRST error/warning carefully - note the file and line.
+ *   3. Fix only that one issue, then rebuild.
+ *   4. Repeat until the build succeeds AND the console output at
+ *      runtime looks correct (a clean build is not the same as a
+ *      correct devicetree!).
+ *
+ * Do not peek at solution/nrf54l15dk_nrf54l15_cpuapp.overlay until
+ * you have tried on your own (or are stuck for more than ~10 minutes).
+ */
+
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+/ {
+	aliases {
+		my-led = &led1;
+	};
+
+	weather0: weather-station {
+		compatible = "workshop,fake-sesnor";
+		status = "okay";
+		sensor-label = "Workshop-Weather-Node";
+		sampling-frequency-hz = "fast";
+		io-gpios = <&gpio2 7 GPIO_ACTIVE_HIGH>;
+	};
+
+	backup0: backup-sensor {
+		compatible = "workshop,fake-sensor";
+		status = "okay";
+		sensor-label = "Backup-Node";
+		sampling-frequency-hz = <5>;
+		io-gpios = <&led9 0 GPIO_ACTIVE_HIGH>;
+	};
+};
