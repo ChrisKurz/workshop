@@ -8,7 +8,7 @@ In this workshop, participants will explore how Zephyr assembles the final Devic
 
 ## Exercise 1 - Explore: Reading a Real DeviceTree
 ### ▶️ Step 1 - Download, Add project to VS code, and Build the workshop application
-1) Download the lab project from [here](lab_projects/LAB4_dt_workshop_app.zip)
+1) Download the lab project from [here](../Lab_Files/LAB4_DerviceTree/dt_workshop_app)
 2)  Add this project with __Open an existing application__ to VS code.
 3) __Add build configuration__ and use following configuration:
    - __Board Target__: nrf54l15dk/nrf54l15/cpuapp
@@ -98,7 +98,7 @@ In this workshop, participants will explore how Zephyr assembles the final Devic
 ## Exercise 3 - Debug: Fixing a Broken DeviceTree
 
 ### ▶️ Step 9 - Open new project
-18) Download the lab project from [here](lab_projects/LAB4_dt_debug_exercise.zip)
+18) Download the lab project from [here](../Lab_Files/LAB4_DeviceTree/dt_debug_exercise)
 19) Add the project to VS Code. __Add build configuration__ with board target nrf54l15dk/nrf54l15/cpuapp.
 
 ### ▶️ Step 10 - Build and Fix Issues

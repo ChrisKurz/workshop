@@ -5,8 +5,9 @@
  * second and logs every toggle over the default UART console. No system or
  * device power management is enabled (see prj.conf). Use this build to take
  * the "Lab 1 baseline" current measurement described in the workshop
- * (Module 3, or the datasheet typical-current figure if no PPK2 is
- * available).
+ * 
+ * NOTE: Because of nRF54L's PMU, the device will enter a deep sleep state 
+ * even though PM is disabled in Zephyr. 
  */
 
 #include <zephyr/kernel.h>
@@ -51,10 +52,14 @@ int main(void)
 		printk("LED state: %s\n", led_state ? "ON" : "OFF");
 
 		/*
-		 * NOTE: with CONFIG_PM disabled, the idle thread only ever
-		 * issues a light k_cpu_idle() between wake-ups - there is no
-		 * deep sleep state selection happening here. That is exactly
-		 * what Lab 2 changes.
+		 * NOTE: 
+		 * ZEPHYR behaviour:
+		 *    with CONFIG_PM disabled, the idle thread only ever
+		 *    issues a light k_cpu_idle() between wake-ups - there is no
+		 *    deep sleep state selection happening here. 
+		 * nRF54L behaviour:
+		 *    PMU in HW handles the sleep state selection, and will enter 
+		 *    a deep sleep state
 		 */
 		k_msleep(SLEEP_TIME_MS);
 	}
