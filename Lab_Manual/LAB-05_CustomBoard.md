@@ -68,9 +68,14 @@ Before creating a custom board, it is important to understand the files that def
 
 ## ▶️ Step 6 - Use custom Board in _blinky_ sample
 12) Copy Zephyr's __blinky__ sample. (__zephyr/samples/basic/blinky__)
-13) __Add build configuration__ and use following settings:
+13) Replace LED0_NODE definition in main.c file:
+
+    ```c
+	#define LED0_NODE   DT_NODELABEL(myled);
+    ```
+14) __Add build configuration__ and use following settings:
     - Board Target: lab_board/nrf54l15/cpuapp
-14) Click on the __Generate and Build__ button.
+15) Click on the __Generate and Build__ button.
 
 
 ## ▶️ Step 7 - Flash and Test
