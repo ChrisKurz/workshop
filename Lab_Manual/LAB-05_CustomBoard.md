@@ -44,11 +44,12 @@ Before creating a custom board, it is important to understand the files that def
 	    leds {
 		     compatible = "gpio-leds";
   
-	       myled: myled {
-	       gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
-         label = "My LED";
+	         myled: myled {
+	              gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+                  label = "My LED";
+	         };
 	    };
-	 };
+    };
    ```
 
 ## ▶️ Step 4 - Modify KCONFIG
