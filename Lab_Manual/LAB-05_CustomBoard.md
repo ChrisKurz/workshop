@@ -50,6 +50,10 @@ Before creating a custom board, it is important to understand the files that def
 	         };
 	    };
     };
+
+    &gpio1 {
+	    status = "okay";
+    };
    ```
 
 ## ▶️ Step 4 - Modify KCONFIG
