@@ -72,7 +72,7 @@ Before creating a custom board, it is important to understand the files that def
 13) Replace LED0_NODE definition in main.c file:
 
     ```c
-	#define LED0_NODE   DT_NODELABEL(myled);
+	#define LED0_NODE   DT_NODELABEL(myled)
     ```
 14) __Add build configuration__ and use following settings:
     - Board Target: lab_board/nrf54l15/cpuapp
