@@ -88,5 +88,5 @@ Before creating a custom board, it is important to understand the files that def
 
 
 ## ▶️ Step 7 - Flash and Test
-15) Download the project by clicking on __Flash__ button.
-16) Does the expected LED blink?
+16) Download the project by clicking on __Flash__ button.
+17) Does the expected LED blink?
